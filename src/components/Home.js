@@ -5,8 +5,8 @@ import switchBtnIcon from "../components/resources/switchBtnIcon.png";
 import busIcon from "../components/resources/busIcon.png"
 
 const Home = () => {
-    const [source, getSource] = useState('');
-    const [destination, getDestination] = useState('');
+    const [source, getSource] = useState('delhi');
+    const [destination, getDestination] = useState('jaipur');
     const [date, getDate] = useState('');
     const [to, getTo] = useState('');
     const [from, getFrom] = useState('');

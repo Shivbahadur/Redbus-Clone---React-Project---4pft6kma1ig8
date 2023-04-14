@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 let GetApiData = (props) => {
 
+    const navigate=useNavigate();
     const[data,setData]=useState([]);
     useEffect(()=>{
+        console.log(props.val);
         setData(props.val);
     })
     
@@ -25,6 +28,11 @@ let GetApiData = (props) => {
         console.log('price',arrangeData);
     }
 
+    const bookTicket=(e)=>{
+        console.log(e.target.id);
+        navigate("/BusSeats", {state:{busData: data,id: e.target.id}});
+    }
+
 
 
     return (
@@ -39,8 +47,8 @@ let GetApiData = (props) => {
                 <button onClick={arrangePrice} className="headerBtn">Price</button>
             </div>
                     {
-                        data.map((item) => (
-                            <div className="list">
+                        (data.length==0) ? <h1 className="noBusFound">No bus found</h1> :  data.map((item) => (
+                            <div className="list" onClick={bookTicket} id={item.id}>
                                 <div className="highlight">{item.busName}</div>
                                 <div>   DEPARTURE <br /><span className="highlight">{item.departureTime}</span></div>
                                 <div>   ARRIVAL <br /><span className="highlight">{item.arrivalTime}</span></div>

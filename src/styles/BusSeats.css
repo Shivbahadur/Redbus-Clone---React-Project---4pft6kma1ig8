@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box;
+    padding: 0%; 
+    margin: 0%;
+ }
+.busSeatPage{
+    background-color: red;
+    height: 100vh;
+}
+
+.busStructure{
+    margin: auto;
+    height: 250px;
+    width: 800px;
+    border-radius: 10px;
+    padding: 15px;
+    background-color: white;
+}
+.largeSide{
+    height: 59%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.smallSide{
+    height: 39%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: end;
+}
+.seat{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+}
+.seatColor{
+    background-color: green;
+}
+.busColor{
+    filter: brightness(0) invert(1);
+}
+.btnBookTicket{
+    padding: 10px 30px;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    margin: 5%;
+    float: right;
+}
+.arrowBelowBus{
+    width: 55%;
+    font-size: 50px;
+    color: white;
+    margin: auto;
+}
+
+.userDetailPage{
+    text-align: center;
+    padding: 10px;
+}
+
+.userInput{
+    padding: 5px 20px;
+    margin: 30px;
+    font-size: large;
+}
+.add{
+    padding: 10px 30px;
+    margin: 30px;
+    font-size: large;
+    background-color: green;
+    color: white;
+}
+.submit{
+    padding: 10px 45px;
+    margin: 30px;
+    font-size: x-large;
+    background-color: red;
+    font-weight: bold;
+    color: white;
+}
+
+.ticketConfirmation{
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    height: 100vh;
+    text-align: center;
+    padding: 350px 50px;
+}
+
+.detailBox{
+    border: 3px solid black;
+}
+.error{
+    color: red;
+}
+.fare{
+    font-size: x-large;
+}
+.ls{
+    list-style-type: none;
+    font-size: x-large;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 30px;
+}

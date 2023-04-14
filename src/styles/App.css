@@ -43,6 +43,7 @@
     background-color: white;
     width: 90%;
     margin: 20px auto ;
+    padding: 10px;
 }
 .highlight{
     font-weight: bold;
@@ -55,6 +56,7 @@
 .busImgIcon{
     display: block;
     margin: auto;
+    height: 100px;
 }
 .heading{
     display: inline;
@@ -72,4 +74,17 @@
     padding: 10px;
     display: flex;
     justify-content: space-around;
+}
+.btn{
+    padding: 10px 20px;
+    background-color: royalblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.noBusFound{
+    padding: 30px;
+    margin: 50px;
+    background-color: white;
+    text-align: center;
 }
