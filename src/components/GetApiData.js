@@ -11,18 +11,54 @@ let GetApiData = (props) => {
     })
     
 
-    let arrangeDeparture=()=>{}
-    let arrangeArrival=()=>{}
+    let arrangeDeparture=()=>{
+        data.departureTime.sort((a, b) => {
+            // extract the hour and minute components of each time string
+            const aComponents = a.split(/[^\d]/);
+            const bComponents = b.split(/[^\d]/);
+            let aHour = parseInt(aComponents[0]);
+            let bHour = parseInt(bComponents[0]);
+            const aMinute = parseInt(aComponents[1]);
+            const bMinute = parseInt(bComponents[1]);
     
-    let arrangeRating=()=>{
-        let arrangeData= data.sort((a,b)=>{
-            return a.rating-b.rating;
-        })
-        console.log('rating of bus',arrangeData);
+            // convert AM/PM to 24-hour format
+            if (a.includes("PM") && aHour < 12) aHour += 12;
+            if (b.includes("PM") && bHour < 12) bHour += 12;
+    
+            // compare the times based on their hour and minute components
+            if (aHour < bHour) return -1;
+            if (aHour > bHour) return 1;
+            if (aMinute < bMinute) return -1;
+            if (aMinute > bMinute) return 1;
+            return 0;
+        });
     }
+    let arrangeArrival=()=>{
+        data.arrivalTime.sort((a, b) => {
+            // extract the hour and minute components of each time string
+            const aComponents = a.split(/[^\d]/);
+            const bComponents = b.split(/[^\d]/);
+            let aHour = parseInt(aComponents[0]);
+            let bHour = parseInt(bComponents[0]);
+            const aMinute = parseInt(aComponents[1]);
+            const bMinute = parseInt(bComponents[1]);
+    
+            // convert AM/PM to 24-hour format
+            if (a.includes("PM") && aHour < 12) aHour += 12;
+            if (b.includes("PM") && bHour < 12) bHour += 12;
+    
+            // compare the times based on their hour and minute components
+            if (aHour < bHour) return -1;
+            if (aHour > bHour) return 1;
+            if (aMinute < bMinute) return -1;
+            if (aMinute > bMinute) return 1;
+            return 0;
+        });
+    }
+    
 
     let arrangePrice=()=>{
-        let arrangeData= data.sort((a,b)=>{
+        data.sort((a,b)=>{
             return a.ticketPrice-b.ticketPrice;
         })
         console.log('price',arrangeData);
@@ -43,7 +79,7 @@ let GetApiData = (props) => {
                 <h1  className="heading">SORT BY:</h1>
                 <button onClick={arrangeDeparture} className="headerBtn">Departure</button>
                 <button onClick={arrangeArrival} className="headerBtn">Arrival</button>
-                <button onClick={arrangeRating} className="headerBtn">Rating</button>
+                <button className="headerBtn">Rating</button>
                 <button onClick={arrangePrice} className="headerBtn">Price</button>
             </div>
                     {

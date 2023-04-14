@@ -18,7 +18,7 @@ const UserDetail = () => {
     console.log("x value",x);
 
     const [error, setError] = useState('');
-    const initialValues = { name: '', age: '', gender: '', phoneNumber: '', seatNO: '' };
+    const initialValues = { name: '', age: '', gender: 'Male', phoneNumber: '', seatNO: '' };
     const [inputValue, setInputValue] = useState(initialValues);
     const [isSubmit, setIsSubmit] = useState(true);
 
@@ -42,7 +42,7 @@ const UserDetail = () => {
         setX((x)=>x+1);
         setPasData([...pasData, inputValue]);
         setInputValue(initialValues);
-        initialValues.gender = "select gender"
+        initialValues.gender = "Male"
         if (x == arr.length) {
             setIsSubmit(false);
         }
@@ -70,10 +70,10 @@ const UserDetail = () => {
                             Age:
                             <input type="number" name="age" className="userInput" onChange={handleChange} value={inputValue.age} />
                             Gender:
-                            <select onChange={handleChange} className="userInput" name="gender">
-                                <option value="select gender">select gender</option>
-                                <option value="Male">Male</option>
-                                <option value="female">female</option>
+                            <select onChange={handleChange} className="userInput" name="gender" value={inputValue.gender}>
+                                <option>Male</option>
+                                <option>female</option>
+                                <option>other</option>
                             </select>
                             Phone number:
                             <input type="number" name="phoneNumber" className="userInput" onChange={handleChange} value={inputValue.phoneNumber} />
