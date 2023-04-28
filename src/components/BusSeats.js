@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../styles/BusSeats.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import busIcon from '../components/resources/busIcon.png';

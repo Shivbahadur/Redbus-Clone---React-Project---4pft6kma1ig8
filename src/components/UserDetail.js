@@ -35,7 +35,11 @@ const UserDetail = () => {
         if (!inputValue.name || !inputValue.age || !inputValue.gender || !inputValue.phoneNumber) {
             setError("All the field are mandatory.");
             return;
-        } else {
+        } else if(inputValue.phoneNumber.length<10 || inputValue.phoneNumber.length>10){
+            setError("Phone number must be of 10 degits")
+            return;
+        }
+        else {
             setError('');
         }
         inputValue.seatNO = arr[x-1];
@@ -85,7 +89,9 @@ const UserDetail = () => {
             }
 
             <div>
-                <button onClick={submit} className="submit">Submit</button>
+             {
+                (!isSubmit) && <button onClick={submit} className="submit">Submit</button>
+             }   
             </div>
         </div>
     )
